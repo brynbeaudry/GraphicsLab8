@@ -7,7 +7,8 @@ var g_center = { x : g_width/2, y : g_height/2}
 var svgContainer = d3.select("body")
 .append("svg")
 .attr("width", g_width)
-.attr("height", g_height);
+.attr("height", g_height)
+.style("background-color", "black");
 
 var test = [
     {x: 5, y: 5},
