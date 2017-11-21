@@ -180,12 +180,16 @@ for (var index = 0; index < array.length; index++) {
 }
 */
 function drawEyePerspective(array, color){
-     for (var index = 0; index < array.length; index++) {
-        if(index != array.length-1){
-            drawLine(array[index], array[index+1], color)
+    for (var key in dictionary) {
+        if (dictionary.hasOwnProperty(key)) {
+            for (var index = 0; index < dictionary[key].length; index++) {
+                console.log(key + " -> " + dictionary[key]);
+                drawLine(_.findWhere(array,{key: key}), _.findWhere(array,{key: dictionary[key][index]}), color)
+            }
         }
     }
 }
 
-drawEyePerspective(lefteye, "rgb(219, 13, 37)")
+drawEyePerspective(lefteye, "rgb(255, 0, 0)")
+drawEyePerspective(righteye, "rgb(0, 255, 255)")
 
